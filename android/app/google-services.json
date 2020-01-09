@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "878898167062",
+    "firebase_url": "https://tree-scanner-48514.firebaseio.com",
+    "project_id": "tree-scanner-48514",
+    "storage_bucket": "tree-scanner-48514.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878898167062:android:dda9c3fa05c748150ba437",
+        "android_client_info": {
+          "package_name": "com.treescanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878898167062-gi537jf17r5pdrq8e3an1pnrdpkqqrbr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhjU_yyDIm8wi8PaM0AhNMt1aAJqPIKh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878898167062-gi537jf17r5pdrq8e3an1pnrdpkqqrbr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

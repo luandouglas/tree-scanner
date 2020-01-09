@@ -4,43 +4,51 @@ import {View, Image, KeyboardAvoidingView} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {Input, Container, Label, Field, Button, Text, Row} from '../../styles';
 import {Actions} from 'react-native-router-flux';
+import firebase from 'react-native-firebase';
+import reactotron from 'reactotron-react-native';
 // import { Container } from './styles';
 
 export default class Login extends Component {
+  state = {email: '', password: ''};
+  login = async () => {
+    const {email, password} = this.state;
+    // firebase.database().
+  };
   render() {
     return (
       <KeyboardAvoidingView style={{flex: 1}}>
-        <View style={{flex: 2}}>
-          <View
-            style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-            <Image
-              source={require('../../assets/logo.png')}
-              style={{
-                width: null,
-                height: null,
-                resizeMode: 'contain',
-                alignSelf: 'center',
-                alignContent: 'center',
-                justifyContent: 'center',
-              }}
-            />
-          </View>
-          <View style={{flex: 1, justifyContent: 'center'}}>
+        <View style={{flex: 1}}>
+          <Image
+            resizeMode={'contain'}
+            source={require('../../assets/logo.png')}
+            style={{
+              margin: 10,
+              flex: 1,
+              width: undefined,
+              height: undefined,
+            }}
+          />
+        </View>
+        <Container style={{flex: 1}}>
+          <View style={{justifyContent: 'center'}}>
             <Field>
-              <Label style={{color: '#FFF'}}>Login</Label>
-              <Input placeholder="Login" style={{backgroundColor: '#FFF'}} />
+              <Input
+                value={this.state.email}
+                onChangeText={email => this.setState({email})}
+                placeholder="E-Mail"
+                style={{backgroundColor: '#FFF'}}
+              />
             </Field>
             <Field>
-              <Label style={{color: '#FFF'}}>Senha</Label>
               <Input
+                value={this.state.password}
+                onChangeText={password => this.setState({password})}
                 placeholder="Senha"
                 style={{backgroundColor: '#FFF'}}
                 secureTextEntry
               />
             </Field>
           </View>
-        </View>
-        <Container style={{flex: 1}}>
           <Button
             onPress={() => {
               Actions.push('Menu');
@@ -60,6 +68,7 @@ export default class Login extends Component {
             }}>
             <Text>Entrar</Text>
           </Button>
+          <Label style={{textAlign: 'center'}}>Entrar como anônimo</Label>
         </Container>
       </KeyboardAvoidingView>
     );

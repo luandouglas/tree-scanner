@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import {Dimensions, View} from 'react-native';
 import {Container, Button, Row, Label} from '../../styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -29,11 +28,16 @@ export default class Menu extends Component {
   render() {
     return (
       <Container>
-        <Header title="Menu" />
         <Container>
+          <Button onPress={() => Actions.push('login')}>
+            <Label style={{textAlign: 'right'}}>Sair</Label>
+          </Button>
           <Button
+            onPress={() => {
+              Actions.push('Maps');
+            }}
             style={{
-              height: (height - 60) / 3,
+              flex: 1,
               backgroundColor: '#1de9b6',
               flexDirection: 'row',
               alignItems: 'center',
@@ -48,7 +52,7 @@ export default class Menu extends Component {
               Actions.push('TreeList');
             }}
             style={{
-              height: (height - 60) / 3,
+              flex: 1,
               backgroundColor: '#6200ea',
               flexDirection: 'row',
               alignItems: 'center',
@@ -59,8 +63,11 @@ export default class Menu extends Component {
             </Label>
           </Button>
           <Button
+            onPress={() => {
+              Actions.push('Pruning');
+            }}
             style={{
-              height: (height - 60) / 3,
+              flex: 1,
               backgroundColor: '#e53935',
               flexDirection: 'row',
               alignItems: 'center',
